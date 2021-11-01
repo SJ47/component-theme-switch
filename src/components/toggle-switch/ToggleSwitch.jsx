@@ -1,7 +1,6 @@
 import React from "react";
 import {
     StyledSwitch,
-    // StyledThemeText,
     StyledSwitchLabel,
     StyledSwitchInput,
     StyledSlider,
@@ -10,9 +9,8 @@ import {
 const ToggleSwitch = ({ handleThemeSwitch }) => {
     return (
         <StyledSwitch>
-            {/* <StyledThemeText>THEME</StyledThemeText> */}
             <StyledSwitchLabel>
-                <StyledSwitchInput onClick={handleThemeSwitch} type="checkbox" />
+                <StyledSwitchInput onChange={handleThemeSwitch} type="checkbox" />
                 <StyledSlider />
             </StyledSwitchLabel>
         </StyledSwitch>

@@ -1,25 +1,31 @@
 import React, { useState } from 'react'
 import { ThemeProvider } from 'styled-components';
 import ToggleSwitch from "./components/toggle-switch/ToggleSwitch";
+import imgNight from "./assets/images/night.png";
+import imgSunny from "./assets/images/sunny.png";
+import { StyledAppContainer } from './components/toggle-switch/ToggleSwitch.styled';
 
 const darkTheme = {
   name: "darkTheme",
+  sliderImage: imgNight,
   colors: {
-    background: "slategrey",
+    background: "#ccc",
     color: "wheat",
+    pageBg: "slategrey",
   },
-  translateX: "2px",
+  translateX: "-6px",
 }
 
 const lightTheme = {
   name: "lightTheme",
+  sliderImage: imgSunny,
   colors: {
-    background: "wheat",
+    background: "#2196f3",
     color: "slategrey",
+    pageBg: "wheat",
   },
-  translateX: "18px",
+  translateX: "24px",
 }
-
 
 function App() {
   const [theme, setTheme] = useState(darkTheme);
@@ -34,7 +40,10 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <ToggleSwitch handleThemeSwitch={handleThemeSwitch} />
+      <StyledAppContainer>
+        <h1>{theme.name}</h1>
+        <ToggleSwitch handleThemeSwitch={handleThemeSwitch} />
+      </StyledAppContainer>
     </ThemeProvider>
   );
 }
